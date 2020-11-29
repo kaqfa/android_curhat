@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Aplikasi Curhat</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+</resources>
