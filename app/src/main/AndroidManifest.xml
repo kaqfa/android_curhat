@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FormCurhatActivity"></activity>
+        <activity android:name=".DetailCurhatActivity"></activity>
+        <activity android:name=".FormCurhatActivity" />
         <activity
             android:name=".DashboardActivity"
             android:label="@string/title_activity_dashboard"
