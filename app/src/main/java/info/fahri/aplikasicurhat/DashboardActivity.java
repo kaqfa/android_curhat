@@ -51,6 +51,9 @@ public class DashboardActivity extends AppCompatActivity {
 
     private void getAllCurhat(){
         ArrayList<Curhat> listCurhat = new ArrayList<>();
+        listCurhat.add(new Curhat(1, "Sembarang", "Contoh curhatan yang benar"));
+        listCurhat.add(new Curhat(1, "Sembarang", "sesungguhnya semua curhatan adalah benar, kecuali yang salah."));
+        listCurhat.add(new Curhat(1, "Sembarang", "Sudah contohnya cukup 3 aja"));
         adapter = new CurhatAdapter(listCurhat);
         recCurhat.setAdapter(adapter);
     }
