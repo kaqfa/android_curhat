@@ -23,9 +23,9 @@ import info.fahri.aplikasicurhat.apiclient.Curhat;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    SharedPreferences sharedPref;
     RecyclerView recCurhat;
     CurhatAdapter adapter;
+    String namaUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +38,6 @@ public class DashboardActivity extends AppCompatActivity {
         recCurhat = findViewById(R.id.rec_curhat);
         recCurhat.setLayoutManager(new LinearLayoutManager(this));
 
-        sharedPref = getSharedPreferences(MainActivity.KEY_USER, Context.MODE_PRIVATE);
-        String namaUser = sharedPref.getString(MainActivity.KEY_USER, null);
         Snackbar.make(toolbar, "Anda login sebagai: "+namaUser, Snackbar.LENGTH_LONG).show();
     }
 
@@ -71,10 +69,9 @@ public class DashboardActivity extends AppCompatActivity {
         fabLogOff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SharedPreferences.Editor editor = sharedPref.edit();
-                editor.remove(MainActivity.KEY_USER);
-                editor.apply();
-                finish();
+                startActivity(new Intent(getBaseContext(), MainActivity.class)
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                            .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
             }
         });
     }

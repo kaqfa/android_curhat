@@ -11,29 +11,30 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText edtNamaUser;
-    SharedPreferences sharedPref;
-    public final static String KEY_USER = "userlogin";
+    EditText edtEmail, edtPassword;
+    public static final String KEY_USER = "DataUser";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        edtNamaUser = findViewById(R.id.edtNama);
-        sharedPref = getSharedPreferences(MainActivity.KEY_USER, Context.MODE_PRIVATE);
+        edtEmail = findViewById(R.id.edtEmail);
+        edtPassword = findViewById(R.id.edtPassword);
 
-        String namaUser = sharedPref.getString(MainActivity.KEY_USER, null);
-        if (namaUser != null){
-            startActivity(new Intent(this, DashboardActivity.class));
-        }
+
     }
 
     public void login(View v){
-        String namaUser = edtNamaUser.getText().toString();
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString(KEY_USER, namaUser).apply();
+        String emailUser = edtEmail.getText().toString();
+        String password = edtPassword.getText().toString();
 
-        startActivity(new Intent(this, DashboardActivity.class));
+        startActivity(new Intent(this, DashboardActivity.class)
+                        .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
+    }
+
+    public void toRegister(View v){
+        startActivity(new Intent(this, RegisterActivity.class));
     }
 }
