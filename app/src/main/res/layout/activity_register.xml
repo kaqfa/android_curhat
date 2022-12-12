@@ -55,6 +55,22 @@
         app:layout_constraintTop_toBottomOf="@+id/edtRegEmail" />
 
     <EditText
+        android:id="@+id/edtRegConfirm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="Konfrimasi Password"
+        android:inputType="textPassword"
+        android:textColor="#CCFF90"
+        android:textColorHint="#52CCFF90"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtRegPassword" />
+
+    <EditText
         android:id="@+id/edtRegNama"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -69,7 +85,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtRegPassword" />
+        app:layout_constraintTop_toBottomOf="@id/edtRegConfirm" />
 
     <Button
         android:id="@+id/btnReg"
