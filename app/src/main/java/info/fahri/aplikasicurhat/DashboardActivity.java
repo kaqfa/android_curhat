@@ -1,8 +1,6 @@
 package info.fahri.aplikasicurhat;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -16,15 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import info.fahri.aplikasicurhat.adapter.CurhatAdapter;
-import info.fahri.aplikasicurhat.apiclient.Curhat;
 
 public class DashboardActivity extends AppCompatActivity {
 
     RecyclerView recCurhat;
-    CurhatAdapter adapter;
     String namaUser;
 
     @Override
@@ -44,16 +37,6 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        getAllCurhat();
-    }
-
-    private void getAllCurhat(){
-        ArrayList<Curhat> listCurhat = new ArrayList<>();
-        listCurhat.add(new Curhat(1, "Sembarang", "Contoh curhatan yang benar"));
-        listCurhat.add(new Curhat(1, "Sembarang", "sesungguhnya semua curhatan adalah benar, kecuali yang salah."));
-        listCurhat.add(new Curhat(1, "Sembarang", "Sudah contohnya cukup 3 aja"));
-        adapter = new CurhatAdapter(listCurhat);
-        recCurhat.setAdapter(adapter);
     }
 
     private void initFab(){
